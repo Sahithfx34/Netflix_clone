@@ -1,4 +1,7 @@
 import { assets } from "../assets/asserts";
+import { logout } from "../firebase";
+
+
 import "../css/Navbar.css"
 
 const Navbar = () => {
@@ -17,15 +20,15 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="nav_right">
-                <img src={assets.search_icon} alt="search" className="icons"/>
+                <img src={assets.search_icon} alt="search" className="icons" />
                 <p>Children</p>
-                <img src={assets.bell_icon} alt="bell_icon" className="icons"/>
+                <img src={assets.bell_icon} alt="bell_icon" className="icons" />
                 <div className="nav_profile">
-                    <img src={assets.profile_img} alt="profile" className="profile_icon"/>
-                    <img src={assets.caret_icon} alt="caret_icon" className="icons"/>
-                </div>
-                <div className="nav_dropdown">
-                    <p>Sign Out</p>
+                    <img src={assets.profile_img} alt="profile" className="profile_icon" />
+                    <img src={assets.caret_icon} alt="caret_icon" className="icons" />
+                    <div className="nav_dropdown">
+                        <p onClick={()=>logout()}>Sign Out</p>
+                    </div>
                 </div>
             </div>
 
